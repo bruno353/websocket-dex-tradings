@@ -21,7 +21,7 @@ contract ERC20WhitelistedAddresses is ERC20, Ownable {
     //Mapping para determinar se o endereço em questão pertence a um grupo seleteo de endereços que podem manusear o token.
     mapping(address => bool) public isAllowed;
 
-    function setIsAllowed(address _address, bool _bool) public {
+    function setIsAllowed(address _address, bool _bool) public onlyOwner {
         isAllowed[_address] = _bool;
     }
 
