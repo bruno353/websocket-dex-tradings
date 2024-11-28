@@ -10,4 +10,10 @@ export default function Home() {
   const tallyFormsRef = useRef(null)
 
   return <WebSocketView />
+  return (
+    <>
+      <WebSocketView />
+      <WebSocketView />
+    </>
+  )
 }
