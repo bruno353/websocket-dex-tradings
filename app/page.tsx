@@ -9,8 +9,10 @@ export default function Home() {
   const contributorsRef = useRef(null)
   const tallyFormsRef = useRef(null)
 
+  return <WebSocketView />
   return (
     <>
+      <WebSocketView />
       <WebSocketView />
     </>
   )
