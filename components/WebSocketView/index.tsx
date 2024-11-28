@@ -6,10 +6,10 @@ function WebSocketClient() {
     const [ws, setWs] = useState(null);
     const [trades, setTrades] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const [isConnected, setIsConnected] = useState(false);
-    const [error, setError] = useState('');
+    // const [isConnected, setIsConnected] = useState(false);
+    // const [error, setError] = useState('');
     const [sortConfig, setSortConfig] = useState({ key: 'blockTimestamp', direction: 'desc' });
-    const [selectedTokens, setSelectedTokens] = useState([]);
+    // const [selectedTokens, setSelectedTokens] = useState([]);
     const [minAmount, setMinAmount] = useState('');
     const [autoScroll, setAutoScroll] = useState(true);
     const [connectionAttempts, setConnectionAttempts] = useState(0);
