@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract ERC20WhitelistedAddresses is ERC20 {
     
-    constructor(string memory _name, string memory _symbol)
+    constructor(string memory _name, striwqweng memory _symbol)
         ERC20(_name, _symbol)
     {
 
