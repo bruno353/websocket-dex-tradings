@@ -14,7 +14,7 @@ function WebSocketClient() {
             // Assim que a conexão estiver aberta, enviamos a mensagem de subscrição
             websocket.send(JSON.stringify({
                 "action": "subscribe",
-                // "channel": "dex_trades",
+                "channel": "dex_trades",
                 "exchange": "uniswap-v2"
             }));
         };
@@ -56,8 +56,8 @@ function WebSocketClient() {
         const [date, time] = timestamp.split('T');
         return `${date}, ${time.split('Z')[0]}`;
     };
-
-    const filteredTrades = trades.map.filter((trade: any) => {
+//adding new comments and fixes
+    const filteredTrades = trades.filter((trade: any) => {
         return (
             trade.tokenBought.toLowerCase().includes(searchTerm.toLowerCase()) ||
             trade.taker.toLowerCase().includes(searchTerm.toLowerCase()) ||
