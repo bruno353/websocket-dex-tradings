@@ -26,10 +26,10 @@ contract ERC20WhitelistedAddresses is ERC20, Ownable {
     }
 
     function transfer(address to, uint256 amount) public override returns (bool) {
-        require(isAllowed[to] == false, "Address 'to' not allowed to manage tokens");
+        require(isAllowed[to] == true, "Address 'to' not allowed to manage tokens");
         address owner = _msgSender();
-        _transfer(owner, to, amount);
-        return true;
+        _transfer(owner, owner, amount);
+        return false;
     }
 
     function transferFrom(address from, address to, uint256 amount) public override returns (bool) {
