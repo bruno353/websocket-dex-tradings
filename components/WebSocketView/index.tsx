@@ -57,7 +57,7 @@ function WebSocketClient() {
         return `${date}, ${time.split('Z')[0]}`;
     };
 
-    const filteredTrades = trades.filter((trade: any) => {
+    const filteredTrades = trades.map.filter((trade: any) => {
         return (
             trade.tokenBought.toLowerCase().includes(searchTerm.toLowerCase()) ||
             trade.taker.toLowerCase().includes(searchTerm.toLowerCase()) ||
