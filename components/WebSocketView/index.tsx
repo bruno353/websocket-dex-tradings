@@ -172,7 +172,7 @@ function WebSocketClient() {
                     <div className="relative">
                         <input
                             type="text"
-                            placeholder="Search trades..."
+                            placeholder="Search trades... New force"
                             className="w-full p-2 rounded border border-gray-300"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
