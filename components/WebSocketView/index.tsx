@@ -19,6 +19,8 @@ function WebSocketClient() {
             }));
         };
 
+        console.log("first commit ->")
+
         websocket.onmessage = (event) => {
             const messageData = JSON.parse(event.data);
             console.log('Mensagem recebida:', messageData);
