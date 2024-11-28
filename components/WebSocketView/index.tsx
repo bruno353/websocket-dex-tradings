@@ -20,6 +20,7 @@ function WebSocketClient() {
         };
 
         console.log("first commit ->")
+        console.log("second commit ->")
 
         websocket.onmessage = (event) => {
             const messageData = JSON.parse(event.data);
