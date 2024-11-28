@@ -135,7 +135,7 @@ function WebSocketClient() {
                     : b[sortConfig.key].localeCompare(a[sortConfig.key]);
             });
         }
-        console.log(filtered);
+        
         return filtered;
     };
 
