@@ -14,7 +14,7 @@ function WebSocketClient() {
             // Assim que a conexão estiver aberta, enviamos a mensagem de subscrição
             websocket.send(JSON.stringify({
                 "action": "subscribe",
-                "channel": "dex_trades",
+                // "channel": "dex_trades",
                 "exchange": "uniswap-v2"
             }));
         };
