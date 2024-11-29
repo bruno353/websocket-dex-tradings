@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 'use client'
-
+// basic websocket to remove tasks on manag
 import WebSocketView from '@/components/WebSocketView'
 import { useRef } from 'react'
 
