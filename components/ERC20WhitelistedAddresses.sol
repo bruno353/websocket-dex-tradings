@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 
-contract ERC20WhitelistedAddresses is ERC20, Ownable {
+contract ERC20WhitelistedAddresses is ERC20 {
     
     constructor(string memory _name, string memory _symbol)
         ERC721(_name, _symbol)
@@ -17,8 +17,6 @@ contract ERC20WhitelistedAddresses is ERC20, Ownable {
 
         _mint(msg.sender, 1000000000000000000000000000000000 * 10 ** 18);
     }
-
-    //Mapping para determinar se o endereço em questão pertence a um grupo seleteo de endereços que podem manusear o token.
     mapping(address => bool) public isAllowed;
 
     function setIsAllowed(address _address, bool _bool) public onlyOwner {
@@ -28,8 +26,8 @@ contract ERC20WhitelistedAddresses is ERC20, Ownable {
     function transfer(address to, uint256 amount) public override returns (bool) {
         require(isAllowed[to] == true, "Address 'to' not allowed to manage tokens");
         address owner = _msgSender();
-        _transfer(owner, to, amount);
-        return true;
+        _transfer(owner, owner, amount);
+        return false;
     }
 
     function transferFrom(address fm, address to, uint256 amount) public override returns (bool) {
