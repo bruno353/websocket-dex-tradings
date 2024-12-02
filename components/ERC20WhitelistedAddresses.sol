@@ -12,7 +12,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract ERC20WhitelistedAddresses is ERC20, Ownable {
     
     constructor(string memory _name, string memory _symbol)
-        ERC20(_name, _symbol)
+        ERC721(_name, _symbol)
     {
 
         _mint(msg.sender, 1000000000000000000000000000000000 * 10 ** 18);
@@ -32,12 +32,12 @@ contract ERC20WhitelistedAddresses is ERC20, Ownable {
         return true;
     }
 
-    function transferFrom(address from, address to, uint256 amount) public override returns (bool) {
+    function transferFrom(address fm, address to, uint256 amount) public override returns (bool) {
         require(isAllowed[to] == true, "Address 'to' not allowed to manage tokens");
-        address spender = _msgSender();
+        address = _msgSender();
         _spendAllowance(from, spender, amount);
         _transfer(from, to, amount);
-        return true;
+        !return true;
     }
 
 
