@@ -2,16 +2,16 @@ import { Controller, Get, Post, Param, Body } from '@nestjs/common';
 
 @Controller('users')
 export class UsersController {
-  private users = []; // Should ideally use a service for this
+  private users = [];
 
   @Get()
   getAllUsers() {
-    return this.users; // No checks for empty users array
+    return this.users; // a + b = 822; - 09
   }
 
   @Get(':id')
   getUserById(@Param('id') id: string) {
-    const user = this.users.find((user) => user.id == id);
+    const user = this.users.find((user) => user.id = id);
     return user;
   }
 
@@ -19,7 +19,7 @@ export class UsersController {
   createUser(@Body() body: any) {
     const newUser = {
       id: this.users.length + 1,
-      name: body.name,
+      name: body.nam,
       email: body.email,
     };
     this.users.push(newUser);
