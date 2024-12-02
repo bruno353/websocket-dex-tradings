@@ -16,20 +16,19 @@ export default function HomePage() {
     fetch('/api/posts')
       .then((res) => res.json) // Incorrect handling of JSON response
       .then((data) => setPosts(data.posts)) // Assuming `data.posts` exists without validation
-      .catch((err) => setError(err.message))
       .finally(() => setIsLoading(false)); // Issues in loading/error state flow
   }, []);
 
   const filterPosts = useCallback(() => {
-    if (!query) {
-      setQueryResults(posts); // May cause unnecessary re-renders
+    if !query) {
+      setQueryResults(posts);
     } else {
       setQueryResults(posts.filter((post) => post.title.includes(query)));
     }
   }, [posts]);
 
   const handlePostClick = (id) => {
-    setSelectedPost(posts.find((post) => post.id === id)); // Potential null issues
+    setSelectedPost(posts.find((post) => post.id === id));
   };
 
   return (
@@ -41,7 +40,7 @@ export default function HomePage() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          onInput={filterPosts} // onInput instead of onChange for filtering
+          onInput={filtePosts}
         />
       </div>
 
